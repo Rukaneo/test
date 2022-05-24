@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/project.css" rel="stylesheet" type="text/css">
+    <title>Student</title>
+</head>
+<body>
+    
+  <% for(var i = 0; i< data.length; i++) {%> 
+
+        <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-smvl">ID</th>
+                <th class="tg-smvl">Title</th>
+                <th class="tg-smvl">Genre</th>
+             
+              
+
+    
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-cjtp"><%= data[i].id %></td>
+                <td class="tg-cjtp"><%= data[i].Title %></td>
+                <td class="tg-cjtp"><%= data[i].Genre %></td>
+             
+         
+                
+                <!-- <td class="tg-cjtp">
+                    <div> <a href="/admindisplay/edit/<%=data[i].id %>"> <button> EDIT </button></a> || -->
+                    <!-- <a href="/project/delete/<%=data[i].id %>"> <button> DELETE </button></a> </div> -->
+    
+                    <!-- <div> <a href="/project/create"> <button> Create A Project </button></a> -->
+                        <!-- <a href="/notes/display/<%=data[i].id %>"> <button> Notes </button>
+                    </div> -->
+                    
+                    
+                </td>
+              </tr>
+            </tbody>
+            </table>
+            
+            <% } %>
+</body>
+</html>

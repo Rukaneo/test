@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- <style>
+        .tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:9px 20px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:9px 20px;word-break:normal;}
+.tg .tg-cjtp{background-color:#ecf4ff;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-vlaw{background-color:#ecf4ff;color:#ecf4ff;text-align:left;vertical-align:top}
+.tg .tg-smvl{background-color:#fd6864;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-og4q{background-color:#fd6864;text-align:left;vertical-align:top}
+    </style> -->
+    <link href="/css/project.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <%- include('./layout/header.ejs'); %> 
+    <h1> PROJECTS PAGE </h1>
+    <h2> Anthony</h2>
+    
+    
+    <div> </div>
+
+
+    <% for(var i = 0; i< data.length; i++) {%> 
+
+    <table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-smvl">ID</th>
+            <th class="tg-smvl">Project Title</th>
+            <th class="tg-smvl">Project Description</th>
+            <th class="tg-og4q">Project Start Date</th>
+            <th class="tg-og4q">Project Due Date</th>
+            <th class="tg-og4q">Actions</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-cjtp"><%= data[i].id %></td>
+            <td class="tg-cjtp"><%= data[i].proj_title %></td>
+            <td class="tg-cjtp"><%= data[i].proj_desc %></td>
+            <td class="tg-cjtp"><%= new Date(data[i].proj_start_dt).toLocaleDateString() %></td>
+            <td class="tg-cjtp"><%= new Date(data[i].proj_due_dt).toLocaleDateString() %></td>
+            <td class="tg-cjtp">
+                <div> <a href="/project/edit/<%=data[i].id %>"> <button> EDIT </button></a> ||
+                <a href="/project/delete/<%=data[i].id %>"> <button> DELETE </button></a> </div>
+
+                <div> <a href="/project/create"> <button> Create A Project </button></a>
+                    <a href="/notes/display/<%=data[i].id %>"> <button> Notes </button>
+                </div>
+                
+                
+            </td>
+          </tr>
+        </tbody>
+        </table>
+        
+        <% } %>
+</body>
+</html>

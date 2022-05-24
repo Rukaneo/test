@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= page_title %> </title>
+</head>
+<body>
+    <h1>Create a Project</h1> 
+    <form action="/project/add" method="post">
+
+        
+
+        <div>
+          
+
+            <label for="p_title"> Project Title  </label>
+            <input type="text" name="p_title">
+        </div>
+        <div>
+            <label for="p_desc">Project Description </label>
+            <input type="text" name="p_desc">
+        </div>
+        <div>
+            <label for="start_date">Start Date for Project </label>
+            <input type="date" name="start_date">
+        </div>
+        <div>
+            <label for="end_date">End Date for Project </label>
+            <input type="date" name="end_date">
+        </div>
+        
+        
+        <div>
+            <input type="submit" value="Create" >
+        </div>
+        
+        
+    </form>
+
+</body>
+</html>
